@@ -1,3 +1,5 @@
+![dataset-cover](https://github.com/omarA381/Car-Price-Prediction/assets/110635840/d594fd88-21c8-447f-8fe2-6a31fdd31efe)
+
 # Car-Price-Prediction
 Car price prediction is a major research topic in machine learning. It's based on finance and marketing, and is a key area of research because car prices depend on many factors.
 # Python
