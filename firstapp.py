@@ -22,7 +22,7 @@ from sklearn.ensemble import GradientBoostingRegressor
 plt.style.use('bmh') 
 st.set_page_config(page_title="Car Data Dashboard", layout="wide")
 # قراءة البيانات
-df = pd.read_csv('\numeric_dataset_car.csv')
+df = pd.read_csv('numeric_dataset_car.csv')
 df.drop(columns=['Unnamed: 0', 'Car_Name'], inplace=True)
 
 car = pd.read_csv('car_prediction_data (1).csv')
