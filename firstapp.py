@@ -1,8 +1,6 @@
-!pip install matplotlib
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 from matplotlip import pyplot as plt
 import seaborn as sns
 from sklearn.linear_model import LinearRegression,Lasso,Ridge
