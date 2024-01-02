@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import matplotlib as plt
 from matplotlip import pyplot as plt
 import seaborn as sns
 from sklearn.linear_model import LinearRegression,Lasso,Ridge
