@@ -1,7 +1,7 @@
 import streamlit as st
-import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.linear_model import LinearRegression,Lasso,Ridge
 from sklearn.svm import SVC
@@ -20,13 +20,12 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.ensemble import GradientBoostingRegressor
 plt.style.use('bmh') 
-
 st.set_page_config(page_title="Car Data Dashboard", layout="wide")
 # قراءة البيانات
-df = pd.read_csv('numeric_dataset_car.csv')
+df = pd.read_csv('D:\\Streamlit\\numeric_dataset_car.csv')
 df.drop(columns=['Unnamed: 0', 'Car_Name'], inplace=True)
 
-car = pd.read_csv('car_prediction_data (1).csv')
+car = pd.read_csv('D:\\Streamlit\\car_prediction_data (1).csv')
 # عرض شكل البيانات
 
 # القائمة الجانبية
@@ -113,7 +112,7 @@ if menu == 'Predictions':
     plt.boxplot(results, labels=models.keys())
     st.pyplot(fig7)
     st.write('Gradient Boosting Regressor Test Set Accuracy: 0.9717546778683558')
-    f1 = st.text_input('Enter Year')
+    f1 = st.text_input('Enter Year',)
     f2 = st.text_input('Enter Present Price')
     f3 = st.text_input('Enter Kms Driven')
     f4 = st.text_input('Enter Fuel Type')
@@ -124,21 +123,23 @@ if menu == 'Predictions':
     if all([f1, f2, f3, f4, f5, f6, f7]):
     # إنشاء قائمة التنبؤ
        predict_list = [int(f1), float(f2), int(f3), f4, f5, f6, f7]
-but = st.button('Predict')
-if but:
+    but = st.button('Predict')
+    if but:
+        
+            
     # إنشاء نموذج GBR
-    GBR = GradientBoostingRegressor()
+        GBR = GradientBoostingRegressor()
 
-    kf = KFold(n_splits=5, shuffle=True, random_state=42)
-    scores = cross_val_score(GBR, X, y, cv=kf)
+        kf = KFold(n_splits=5, shuffle=True, random_state=42)
+        scores = cross_val_score(GBR, X, y, cv=kf)
 
     # التنبؤ باستخدام النموذج الذي تم تدريبه
-    prediction = GBR.fit(X, y).predict([predict_list])
+        prediction = GBR.fit(X, y).predict([predict_list])
 
-    st.markdown(f"<h1 style='text-align: center;'>{prediction}</h1>", unsafe_allow_html=True)
+        st.markdown(f"<h1 style='text-align: center;'>{prediction}</h1>", unsafe_allow_html=True)
         
 
-    
+
     
 
 
